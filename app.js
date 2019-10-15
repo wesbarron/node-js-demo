@@ -16,9 +16,6 @@ app.get('/about', function(req, res){
     res.send("<h1>about page</h1>");
 });
 
-app.listen(port, function(){
-
-});
 
 http.createServer(app).listen(port, function(){
 
