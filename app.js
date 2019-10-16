@@ -26,7 +26,7 @@ app.post('/removetask', function(req, res){
     var deleteTask = req.body.newtask;
     alert(req.values);
 
-    if(req.values() == 1){
+    if(req.checked == true){
     task.pop(deleteTask);
     }
     //task.push(res);
