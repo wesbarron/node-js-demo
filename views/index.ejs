@@ -21,12 +21,8 @@
       <h2> Completed task </h2>
         <% for(var i = 0; i < task.length; i++){ %>
             <h3 id="completedTask"></h3>
-        <% } %>
 
-    </div>
-
-    <script>
-    document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
+             document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
 
     function checkList(){
         var result = document.getElementById("<%= task[i] %>").checked;
@@ -39,6 +35,24 @@
             replace.innerHTML = "Not Found";
         }
     }
+        <% } %>
+
+    </div>
+
+    <script>/*
+    document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
+
+    function checkList(){
+        var result = document.getElementById("<%= task[i] %>").checked;
+        var replace = document.getElementById("completedTask");
+
+        if(result == true){
+            replace.innerHTML = document.getElementById("<%= task[i] %>").value;
+        }
+        else {
+            replace.innerHTML = "Not Found";
+        }
+    }*/
     </script>
 
   </body>
