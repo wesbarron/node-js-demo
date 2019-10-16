@@ -24,11 +24,11 @@ app.post('/addtask', function(req, res){
 
 app.post('/removetask', function(req, res){
     var deleteTask = req.body.newtask;
-    task.slice(req.body.checked);
 
-    //if(req.body.value == true){
-    //task.pop();
-   // }
+
+    if(req.body.checked == true){
+    task.pop();
+}
     //task.push(res);
     //removedTask.push(deleteTask);
     res.redirect('/');
