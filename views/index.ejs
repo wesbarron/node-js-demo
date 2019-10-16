@@ -29,7 +29,7 @@
         var result = document.getElementById("is-checked").checked;
         var replace = document.getElementById("completedTask");
         if(result == true){
-            replace.innerHTML = result.value;
+            replace.innerHTML = document.getElementById("is-checked").value;
         }
         else {
             replace.innerHTML = "Not Found";
