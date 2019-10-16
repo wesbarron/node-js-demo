@@ -25,9 +25,12 @@
     </div>
 
     <script>
+    document.getElementById("is-checked").addEventListener("click", checkList);
+
     function checkList(){
         var result = document.getElementById("is-checked").checked;
         var replace = document.getElementById("completedTask");
+
         if(result == true){
             replace.innerHTML = document.getElementById("is-checked").value;
         }
