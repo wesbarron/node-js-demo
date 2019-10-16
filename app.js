@@ -25,6 +25,7 @@ app.post('/addtask', function(req, res){
 app.post('/removetask', function(req, res){
     var deleteTask = req.body.newtask;
     task.slice(deleteTask.checked);
+    console.log(req.body);
     //if(req.body.value == true){
     //task.pop();
    // }
