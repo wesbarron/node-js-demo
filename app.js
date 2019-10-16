@@ -24,7 +24,7 @@ app.post('/addtask', function(req, res){
 
 app.post('/removetask', function(req, res){
     //var deleteTask = req.body.newtask;
-    task.splice(req.params.checked);
+    task.splice(req.params.checked, 1);
 
     res.redirect('/');
 })
