@@ -10,6 +10,7 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["excercise", "eat"];
+var removedTask = [];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
@@ -23,8 +24,8 @@ app.post('/addtask', function(req, res){
 
 app.post('/removetask', function(req, res){
     var deleteTask = req.body.newtask;
-    task.pop(deleteTask);
-    res.redirect('/'); 
+    removedTask.pop(deleteTask);
+    res.redirect('/');
 })
 
 http.createServer(app).listen(port, function(){
