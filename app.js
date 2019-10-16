@@ -21,6 +21,12 @@ app.post('/addtask', function(req, res){
     res.redirect('/');
 });
 
+app.post('/removetask', function(req, res){
+    var deleteTask = req.body.newtask;
+    task.pop(deleteTask);
+    res.redirect('/'); 
+})
+
 http.createServer(app).listen(port, function(){
 
 });
