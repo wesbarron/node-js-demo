@@ -33,7 +33,7 @@
         var replace = document.getElementById("completedTask");
 
         if(result == true){
-            replace.innerHTML = document.getElementById("is-checked").value;
+            replace.innerHTML = document.getElementById("<%= task[i] %>").value;
         }
         else {
             replace.innerHTML = "Not Found";
