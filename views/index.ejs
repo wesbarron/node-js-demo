@@ -13,7 +13,7 @@
         <h2> Added Task </h2>
 
         <% for(var i = 0; i < task.length; i++){ %>
-            <li><input id="is-checked" type="checkbox" name="check" value="<%= task[i] %>" /><%= task[i] %></li>
+            <li><input id="<%= task[i] %>" type="checkbox" name="check" value="<%= task[i] %>" /><%= task[i] %></li>
         <% } %>
 
         <button formaction="/removetask" type="submit"> Remove </button>
@@ -26,10 +26,10 @@
     </div>
 
     <script>
-    document.getElementById("is-checked").addEventListener("click", checkList);
+    document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
 
     function checkList(){
-        var result = document.getElementById("is-checked").checked;
+        var result = document.getElementById("<%= task[i] %>").checked;
         var replace = document.getElementById("completedTask");
 
         if(result == true){
