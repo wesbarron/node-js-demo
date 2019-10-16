@@ -19,8 +19,9 @@
         <button formaction="/removetask" type="submit"> Remove </button>
       </form>
       <h2> Completed task </h2>
-
-        <h3 id="completedTask"></h3>
+        <% for(var i = 0; i < task.length; i++){ %>
+            <h3 id="completedTask"></h3>
+        <% } %>
 
     </div>
 
