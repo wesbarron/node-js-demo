@@ -20,12 +20,17 @@
       </form>
       <h2> Completed task </h2>
 
-        <% for(var i = 0; i < task.length; i++){ %>
-            <% if(task[i] == true){ %>
-            <li><input class="is-checked" type="checkbox" name="check" value="<%= task[i] %>" "checked" /><%= task[i] %></li>
-           <% } %>
-        <% } %>
+        <h3 id="completedTask"></h3>
 
     </div>
+
+    <script>
+        var result = document.getElementById("is-checked").checked;
+        var replace = document.getElementById("completedTask");
+        if(result == true){
+            replace.innerHTML = result.value;
+        }
+    </script>
+
   </body>
 </html>
