@@ -21,7 +21,7 @@
       <h2> Completed task </h2>
         <% for(var i = 0; i < task.length; i++){ %>
             <h3 id="completedTask"></h3>
-
+    <script>
              document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
 
     function checkList(){
@@ -35,6 +35,7 @@
             replace.innerHTML = "Not Found";
         }
     }
+    </script>
         <% } %>
 
     </div>
