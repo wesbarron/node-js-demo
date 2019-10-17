@@ -26,7 +26,7 @@ app.post('/addtask', function(req, res){
 app.post('/removetask', function(req, res){
    var deleteTask = req.params.id;
    if (deleteTask == req.body.checked){
-       task.slice(deleteTask);
+       task.slice(deleteTask,1);
    }
 
     res.redirect('/');
