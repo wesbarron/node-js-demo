@@ -10,7 +10,7 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["excercise", "eat"];
-var removedTask = [];
+var removedTask = ["other"];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
