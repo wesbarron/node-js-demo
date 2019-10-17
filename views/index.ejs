@@ -19,7 +19,12 @@
         <button formaction="/removetask" type="submit"> Remove </button>
       </form>
       <h2> Completed task </h2>
-        <% for(var i = 0; i < task.length; i++){ %>
+
+        <% for(var i = 0; i < removedTask.length; i++){ %>
+            <li><%= removedTask[i] %></li>
+        <% } %>
+
+       <!-- <% for(var i = 0; i < task.length; i++){ %>
             <h3 id="i"></h3>
     <script>
              document.getElementById("<%= task[i] %>").addEventListener("click", checkList);
@@ -36,7 +41,7 @@
         }
     }
     </script>
-        <% } %>
+        <% } %> -->
 
     </div>
 
