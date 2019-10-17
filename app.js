@@ -33,7 +33,7 @@ app.post('/removetask', function(req, res){
         req.send("no deletion of " + req.params.id);
     }
     res.redirect('/');
-})
+});
 
 http.createServer(app).listen(port, function(){
 
