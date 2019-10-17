@@ -10,7 +10,7 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["excercise", "eat"];
-var complete = ["complete"];
+var complete = [""];
 
 app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
@@ -31,7 +31,7 @@ app.post('/removetask', function(req, res){
     else if (typeof removedTask === "object"){
         for (var i = 0; i < removedTask.length; i++){
             complete.push(removedTask[i]);
-            task.splice(task.indexOf(removedTask[i]), 1);
+            task.splice(task.indexOf(removedTask[i]));
         }
     }
     res.redirect('/');
