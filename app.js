@@ -19,7 +19,7 @@ app.get('/', function(req, res){
 
 app.post('/addtask', function(req, res){
     var newTask = req.body.newtask;
-    if (newTask === !""){
+    if (newTask !== ""){
     task.push(newTask);
     }
     res.redirect('/');
