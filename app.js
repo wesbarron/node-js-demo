@@ -28,7 +28,7 @@ app.post('/removetask', function(req, res){
         task.pop();
 
 
-        task.push("other");
+        removedTask.push("other");
 
     res.redirect('/');
 });
