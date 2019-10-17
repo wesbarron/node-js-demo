@@ -14,6 +14,7 @@ var complete = ["complete"];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
+    res.render("index", {complete:complete});
 });
 
 app.post('/addtask', function(req, res){
