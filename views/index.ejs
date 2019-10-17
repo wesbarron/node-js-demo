@@ -21,7 +21,7 @@
       <h2> Completed task </h2>
 
          <% for(var j = 0; j < removedTask.length; j++){ %>
-            <h3><%= removedTask[j] %></h3>
+            <li><input id="<%= removedTask[i] %>" type="checkbox" name="check" value="<%= removedTask[i] %>" /><%= removedTask[i] %></li>
         <% } %>
 
     </div>
