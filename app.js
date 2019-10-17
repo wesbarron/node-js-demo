@@ -10,7 +10,7 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["excercise", "eat"];
-var removedTask = ["other"];
+var removedTask = [];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
@@ -24,9 +24,10 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-   //var deleteTask = req.params.id;
-    
-        //removedTask.push("other");
+   var deleteTask = req.params.id;
+   if (deleteTask == req.body.checked){
+       task.slice(deleteTask);
+   }
 
     res.redirect('/');
 });
