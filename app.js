@@ -10,11 +10,10 @@ app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
 
 var task = ["excercise", "eat"];
-var removedTask = [];
+var complete = ["complete"];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
-    res.render("index", {removedTask:removedTask});
 });
 
 app.post('/addtask', function(req, res){
@@ -23,12 +22,18 @@ app.post('/addtask', function(req, res){
     res.redirect('/');
 });
 
-app.post('/removetask:id', function(req, res){
-   var deleteTask = req.params.id;
+app.post('/removetask', function(req, res){
+    var removedTask = req.body.check;
 
-       task.slice(deleteTask,1);
-
-
+    if (typeof removedTask === "string"){
+        complete.push(removedTask);
+    }
+    else if (typeof removedTask === "object"){
+        for (var i = 0; i < removedTask.length; i++){
+            complete.push(removedTask[i]);
+            task.splice(task.indexOf(removedTask[i]), 1);
+        }
+    }
     res.redirect('/');
 });
 
