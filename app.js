@@ -14,6 +14,7 @@ var removedTask = ["other"];
 
 app.get('/', function(req, res){
     res.render("index", {task:task});
+    res.render("index", {removedTask:removedTask});
 });
 
 app.post('/addtask', function(req, res){
