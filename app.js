@@ -22,7 +22,7 @@ app.post('/addtask', function(req, res){
     res.redirect('/');
 });
 
-app.post('/removetask/:id', function(req, res){
+app.post('/removetask', function(req, res){
    var deleteTask = req.param.id;
    if (deleteTask == true){
         task.splice(deleteTask, 1);
