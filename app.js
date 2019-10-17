@@ -13,8 +13,7 @@ var task = ["excercise", "eat"];
 var complete = ["complete"];
 
 app.get('/', function(req, res){
-    res.render("index", {task:task});
-    res.render("index", {complete:complete});
+    res.render("index", {task:task, complete:complete});
 });
 
 app.post('/addtask', function(req, res){
