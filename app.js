@@ -8,6 +8,7 @@ var port = process.env.PORT || 3000;
 app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({ encoded: true}));
+app.use(express.static("public"));
 
 var task = ["excercise", "eat"];
 var complete = [];
