@@ -23,6 +23,7 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
+<<<<<<< HEAD
     var deleteTask = req.param.id.checked;
 
     if(deleteTask){
@@ -32,6 +33,17 @@ app.post('/removetask', function(req, res){
         res.send("no deletion of " + req.params.id);
     }
 
+=======
+   var deleteTask = req.param.id.checked;
+
+    if(deleteTask){
+    task.splice(req.params.id);
+    removedTask.push(deleteTask);
+    }
+    else{
+        req.send("no deletion of " + req.params.id);
+    }
+>>>>>>> c9fc50fad4f9c669eff031294353297e9a8c3914
     res.redirect('/');
 })
 
