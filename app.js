@@ -23,15 +23,16 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-    var removedTask = req.body.check-1;
+    var removedTask = req.body.check;
 
-    /*if (typeof removedTask === "string"){
+    if (typeof removedTask === "string"){
         complete.push(removedTask);
-    }*/
-    if (typeof removedTask === "object"){
+        task.splice(task.indexOf(removedTask), 1);
+    }
+    else if (typeof removedTask === "object"){
         for (var i = 0; i < removedTask.length; i++){
             complete.push(removedTask[i]);
-            task.splice(task.indexOf(removedTask[i]));
+            task.splice(task.indexOf(removedTask[i]), 1);
         }
     }
     res.redirect('/');
