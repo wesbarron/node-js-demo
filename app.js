@@ -23,15 +23,13 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-   var deleteTask = req.param.id;
+   var deleteTask = req.param.id.checked;
 
     if(deleteTask){
-    task.splice(req.params.id);
+    task.splice(req.params.id, 1);
     removedTask.push(deleteTask);
     }
-    else{
-        req.send("no deletion of " + req.params.id);
-    }
+
     res.redirect('/');
 });
 
