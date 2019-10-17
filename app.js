@@ -23,13 +23,13 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-    var removedTask = req.body.check;
+    var removedTask = req.body.check-1;
 
     /*if (typeof removedTask === "string"){
         complete.push(removedTask);
     }*/
     if (typeof removedTask === "object"){
-        for (var i = 0; i < removedTask.length-1; i++){
+        for (var i = 0; i < removedTask.length; i++){
             complete.push(removedTask[i]);
             task.splice(task.indexOf(removedTask[i]));
         }
