@@ -29,9 +29,9 @@ app.post('/removetask', function(req, res){
         complete.push(removedTask);
     }*/
     if (typeof removedTask === "object"){
-        for (var i = 0; i < removedTask.length; i++){
+        for (var i = 0; i < removedTask.length-1; i++){
             complete.push(removedTask[i]);
-            task.splice(task.indexOf(removedTask[i])-1);
+            task.splice(task.indexOf(removedTask[i]));
         }
     }
     res.redirect('/');
