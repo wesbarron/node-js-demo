@@ -25,9 +25,9 @@ app.post('/addtask', function(req, res){
 
 app.post('/removetask:id', function(req, res){
    var deleteTask = req.params.id;
-   if (deleteTask == task.checked){
+
        task.slice(deleteTask,1);
-   }
+
 
     res.redirect('/');
 });
