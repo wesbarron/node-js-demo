@@ -14,7 +14,7 @@ var task = [];
 var complete = [];
 
 app.get('/', function(req, res){
-    //res.render("index", {task:task, complete:complete});
+    res.render("index", {task:task, complete:complete});
 });
 /*
 app.post('/addtask', function(req, res){
