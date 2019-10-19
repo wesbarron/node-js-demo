@@ -17,9 +17,10 @@ app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
 */
+var newComic = "http://xkcd.com/614/info.0.json";
 
 app.get('/', function(req, res){
-    res.render("comic", {});
+    res.render("comic", {task:task, newComic:newComic});
 });
 /*
 app.post('/addtask', function(req, res){
@@ -49,11 +50,11 @@ app.post('/removetask', function(req, res){
 
 //random comic post
 app.post('/addcomic', function(req, res){
-    var newComic = JSON.parse();
-    if (newTask !== ""){
-    task.push(newTask);
-    }
-    res.redirect('/comic');
+
+
+    res.push(newComic);
+
+    res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
