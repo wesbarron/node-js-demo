@@ -16,7 +16,7 @@ var complete = [];
 app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
-
+/*
 app.post('/addtask', function(req, res){
     var newTask = req.body.newtask;
     if (newTask !== ""){
@@ -40,6 +40,8 @@ app.post('/removetask', function(req, res){
     }
     res.redirect('/');
 });
+*/
+
 //random comic post
 app.post('/addcomic', function(req, res){
     var newComic = JSON.parse();
