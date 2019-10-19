@@ -40,6 +40,14 @@ app.post('/removetask', function(req, res){
     }
     res.redirect('/');
 });
+//random comic post
+app.post('/addcomic', function(req, res){
+    var newComic = JSON.parse();
+    if (newTask !== ""){
+    task.push(newTask);
+    }
+    res.redirect('/');
+});
 
 http.createServer(app).listen(port, function(){
 
