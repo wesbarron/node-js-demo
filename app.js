@@ -13,7 +13,7 @@ app.use(express.static("public"));
 var task = [];
 var complete = [];
 
-app.get('/comic', function(req, res){
+app.get('/comic.ejs', function(req, res){
     //res.render("index", {task:task, complete:complete});
 });
 /*
