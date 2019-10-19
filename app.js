@@ -16,6 +16,10 @@ var complete = [];
 app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
+
+app.get('/', function(req, res){
+    res.render("comic", {});
+});
 /*
 app.post('/addtask', function(req, res){
     var newTask = req.body.newtask;
