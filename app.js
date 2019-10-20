@@ -56,7 +56,7 @@ app.post('http://xkcd.com/614/info.0.json', function(req, res){
     var comicYear = req.body.year;
     var comicImg = req.body.img;
 
-    res.send(comicYear + '' + comicImg);
+    console.log(comicYear + '' + comicImg);
 
    res.redirect('/');
 });
