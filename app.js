@@ -50,7 +50,7 @@ app.post('/removetask', function(req, res){
 
 //random comic post
 app.post('addComic', function(req, res){
-    var data = JSON.parse(newComic);
+    var data = JSON.stringify(newComic);
     console.log(data.body);
     res.send(data);
 
