@@ -20,7 +20,7 @@ app.get('/', function(req, res){
 var newComic = "http://xkcd.com/614/info.0.json";
 
 app.get('/', function(req, res){
-    res.render("comic", {task:task, newComic:newComic});
+    res.render("comic", {task:task, newComic:newComic, data:data});
 });
 /*
 app.post('/addtask', function(req, res){
@@ -51,10 +51,10 @@ app.post('/removetask', function(req, res){
 //random comic post
 app.post('/randomComic', function(req, res){
     var data = JSON.stringify(newComic);
-    console.log(data);
+    //console.log(data);
     res.send(data);
 
-   res.redirect('/');
+   //res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
