@@ -53,9 +53,9 @@ app.post('/removetask', function(req, res){
 app.post('/randomComic', function(req, res){
 
     //console.log(data);
-   // res.send(data);
+   res.send(data);
 
-   //res.redirect('/');
+   res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
