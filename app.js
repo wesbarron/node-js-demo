@@ -20,7 +20,7 @@ app.get('/', function(req, res){
 var newComic = "http://xkcd.com/614/info.0.json";
 
 app.get('/', function(req, res){
-    res.render("comic", {task:task, newComic:newComic});
+    res.render(newComic, {task:task, newComic:newComic});
 });
 /*
 app.post('/addtask', function(req, res){
@@ -49,7 +49,7 @@ app.post('/removetask', function(req, res){
 */
 
 //random comic post
-app.post('http://xkcd.com/614/info.0.json', function(req, res){
+app.post('addComic', function(req, res){
 
     res.send(req.body);
 
