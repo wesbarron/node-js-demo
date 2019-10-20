@@ -17,8 +17,12 @@ app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
 */
-var newComic = "http://xkcd.com/614/info.0.json";
-var data = JSON.stringify(newComic);
+const url = "http://xkcd.com/614/info.0.json";
+fetch(url)
+    .then((resp) => resp.json())
+    .then(function(data){
+        let newComic = data.results;
+    });
 
 app.get('/', function(req, res){
     res.render("comic", {newComic:newComic, data:data});
@@ -53,8 +57,8 @@ app.post('/removetask', function(req, res){
 
 app.post('/addComic', function(req, res){
 
-    var comicYear = req.param("year");
-    var comicImg = req.param("img");
+    var comicYear = newComic.year;
+    var comicImg = newComic.img;
 
     res.send(comicYear + ' ' + comicImg);
 
