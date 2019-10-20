@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 });
 */
 var newComic = "http://xkcd.com/614/info.0.json";
-var data = JSON.stringify(newComic);
+var data = JSON.parse(newComic);
 
 app.get('/', function(req, res){
     res.render("comic", {newComic:newComic, data:data});
@@ -53,7 +53,7 @@ app.post('/removetask', function(req, res){
 app.post('/randomComic', function(req, res){
 
     //console.log(data);
-   res.send(JSON.parse(newComic));
+   res.send(data.body);
 
    res.redirect('/');
 });
