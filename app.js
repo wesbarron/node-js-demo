@@ -49,12 +49,12 @@ app.post('/removetask', function(req, res){
 */
 
 //random comic post
-app.post('/addcomic', function(req, res){
+app.post(newComic, function(req, res){
+
+    res.send(req.body);
 
 
-    res.push(newComic);
-
-    res.redirect('/');
+   // res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
