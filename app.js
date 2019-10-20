@@ -17,11 +17,11 @@ app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
 */
-const url = "http://xkcd.com/614/info.0.json";
+var url = "http://xkcd.com/614/info.0.json";
 fetch(url)
     .then((resp) => resp.json())
     .then(function(data){
-        let newComic = data.results;
+        var newComic = data.results;
     });
 
 app.get('/', function(req, res){
@@ -57,10 +57,10 @@ app.post('/removetask', function(req, res){
 
 app.post('/addComic', function(req, res){
 
-    var comicYear = newComic.year;
-    var comicImg = newComic.img;
+    //var comicYear = newComic.year;
+    //var comicImg = newComic.img;
 
-    res.send(comicYear + ' ' + comicImg);
+    res.send(newComic);
 
    res.redirect('/');
 });
