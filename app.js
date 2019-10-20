@@ -49,7 +49,7 @@ app.post('/removetask', function(req, res){
 */
 
 //random comic post
-app.post(newComic, function(req, res){
+app.post('http://xkcd.com/614/info.0.json', function(req, res){
 
     res.send(req.body);
 
