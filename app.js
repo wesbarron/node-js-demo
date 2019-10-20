@@ -51,10 +51,10 @@ app.post('/removetask', function(req, res){
 //random comic post
 app.post('addComic', function(req, res){
     var data = JSON.stringify(newComic);
-    console.log(data.body);
-    res.send(data);
+    console.log(data);
+    res.send(data.img);
 
-   // res.redirect('/');
+   res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
