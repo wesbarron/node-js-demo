@@ -56,7 +56,7 @@ app.post('/addComic', function(req, res){
     var comicYear = req.body.year;
     var comicImg = req.body.img;
 
-    console.log(comicYear + '' + comicImg);
+    res.send(comicYear + '' + comicImg);
 
    res.redirect('/');
 });
