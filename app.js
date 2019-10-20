@@ -54,7 +54,7 @@ app.post('/removetask', function(req, res){
 app.post('/addComic', function(req, res){
 
     var comicYear = req.param("year");
-    var comicImg = req.body("img");
+    var comicImg = req.param("img");
 
     res.send(comicYear + ' ' + comicImg);
 
