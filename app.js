@@ -53,7 +53,7 @@ app.post('/removetask', function(req, res){
 app.post('/randomComic', function(req, res){
 
     //console.log(data);
-   res.send(data.body);
+   res.send(data);
 
    res.redirect('/');
 });
