@@ -51,7 +51,7 @@ app.post('/removetask', function(req, res){
 
 //random comic post
 
-app.post('//xkcd.com/614/info.0.json', function(req, res){
+app.post('/addComic', function(req, res){
 
     var comicYear = req.body.year;
     var comicImg = req.body.img;
