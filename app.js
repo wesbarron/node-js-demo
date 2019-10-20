@@ -52,7 +52,7 @@ app.post('/removetask', function(req, res){
 app.post('addComic', function(req, res){
     var data = JSON.parse(newComic);
     console.log(data);
-    Response.send(data);
+    res.send(data);
 
    // res.redirect('/');
 });
