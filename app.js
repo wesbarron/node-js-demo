@@ -18,7 +18,7 @@ app.get('/', function(req, res){
 });
 */
 var url = "http://xkcd.com/614/info.0.json";
-var newComic = fetch(url);
+//var newComic = fetch(url);
 /*
     .then((resp) => resp.json())
     .then(function(data){
