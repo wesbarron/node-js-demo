@@ -26,7 +26,7 @@ var url = "http://xkcd.com/614/info.0.json";
     });*/
 
 app.get('/', function(req, res){
-    res.render("comic", {newComic:newComic, data:data});
+    res.render("comic", {newComic:newComic});
 });
 /*
 app.post('/addtask', function(req, res){
