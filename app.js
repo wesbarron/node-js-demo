@@ -18,11 +18,12 @@ app.get('/', function(req, res){
 });
 */
 var url = "http://xkcd.com/614/info.0.json";
-fetch(url)
+var newComic = fetch(url);
+/*
     .then((resp) => resp.json())
     .then(function(data){
         var newComic = data.results;
-    });
+    });*/
 
 app.get('/', function(req, res){
     res.render("comic", {newComic:newComic, data:data});
