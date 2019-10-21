@@ -17,7 +17,7 @@ app.get('/', function(req, res){
     res.render("index", {task:task, complete:complete});
 });
 */
-var url = "http://xkcd.com/614/info.0.json";
+//var url = "http://xkcd.com/614/info.0.json";
 //var newComic = fetch(url);
 /*
     .then((resp) => resp.json())
@@ -26,7 +26,7 @@ var url = "http://xkcd.com/614/info.0.json";
     });*/
 
 app.get('/', function(req, res){
-    res.render("comic", {newComic:newComic});
+    res.render("comic", {});
 });
 /*
 app.post('/addtask', function(req, res){
@@ -63,7 +63,7 @@ app.post('/addComic', function(req, res){
 
     //res.send(newComic);
 
-   res.redirect('/');
+   //res.redirect('/');
 });
 
 http.createServer(app).listen(port, function(){
