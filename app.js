@@ -27,11 +27,16 @@ app.get('/', function(req, res){
 
 
 app.post('/addtask', function(req, res){
-    var newTask = req.body.newtask;
-    if (newTask !== ""){
-    task.push(newTask);
-    }
-    res.redirect('/');
+    let newTodo = new Todo({
+        item: req.body.newtask,
+        done: false
+    })
+    newTodo.save(function(err){
+        if (err){
+            console.log(err);
+        }
+        res.redirect('/');
+    });
 });
 
 app.post('/removetask', function(req, res){
