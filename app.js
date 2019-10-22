@@ -22,6 +22,16 @@ var task = [];
 var complete = [];
 
 app.get('/', function(req, res){
+    Todo.find(function(err, todo){
+        if(err){
+            console.log(err);
+        }else{
+            task = [];
+            for(i=0; i<todo.length; i++){
+                task.push(todo[i].item);
+            }
+        }
+    });
     res.render("index", {task:task, complete:complete});
 });
 
