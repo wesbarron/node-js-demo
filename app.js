@@ -50,16 +50,25 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-    var removedTask = req.body.check;
-
-    if (typeof removedTask === "string"){
-        complete.push(removedTask);
-        task.splice(task.indexOf(removedTask), 1);
+    //var removedTask = req.body.check;
+    let removeTodo = new Todo({
+        item: req.body.check,
+        done: false
+    });
+    removeTodo.delete(function(err){
+        if (err){
+            console.log(err);
+        }
+        res.redirect('/');
+    });
+    if (typeof removeTodo === "string"){
+        removeTodo.remove(item);
+        //task.splice(task.indexOf(removedTask), 1);
     }
-    else if (typeof removedTask === "object"){
-        for (var i = 0; i < removedTask.length; i++){
-            complete.push(removedTask[i]);
-            task.splice(task.indexOf(removedTask[i]), 1);
+    else if (typeof removeTodo === "object"){
+        for (var i = 0; i < todo.length; i++){
+            removeTodo.save(removedTask[i]);
+            //task.splice(task.indexOf(removedTask[i]), 1);
         }
     }
     res.redirect('/');
