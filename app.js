@@ -64,7 +64,7 @@ app.post('/removetask', function(req, res){
         res.redirect('/'); */
 
     if (typeof removeTodo === "string"){
-        Todo.updateOne({item: complete}, {done: true}, function(err){
+        Todo.updateOne({item: removedTask}, {done: true}, function(err){
             console.log(err);
         });
       //  removeTodo.remove(item);
@@ -72,7 +72,7 @@ app.post('/removetask', function(req, res){
     }
     else if (typeof removeTodo === "object"){
         for (var i = 0; i < todo.length; i++){
-            Todo.updateOne({item: complete[i]}, {done: true}, function(err){
+            Todo.updateOne({item: removedTask[i]}, {done: true}, function(err){
             console.log(err);
         });
            // removeTodo.save(removedTask[i]);
