@@ -77,7 +77,7 @@ app.post('/removetask', function(req, res){
     }
     else if (typeof removedTask === "object"){
         for (var i = 0; i < todo.length; i++){
-            Todo.updateOne({item: removedTask[i]}, {done: true}, function(err){
+            Todo.update({item: removedTask[i]}, {done: true}, function(err){
             console.log(err);
         });
            // removeTodo.save(removedTask[i]);
