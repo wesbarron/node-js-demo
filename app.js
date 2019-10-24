@@ -68,14 +68,14 @@ app.post('/removetask', function(req, res){
         }
         res.redirect('/'); */
 
-    if (typeof removeTask === "string"){
+    if (typeof removedTask === "string"){
         Todo.updateOne({item: removedTask}, {done: true}, function(err){
             console.log(err);
         });
       //  removeTodo.remove(item);
         //task.splice(task.indexOf(removedTask), 1);
     }
-    else if (typeof removeTodo === "object"){
+    else if (typeof removedTask === "object"){
         for (var i = 0; i < todo.length; i++){
             Todo.updateOne({item: removedTask[i]}, {done: true}, function(err){
             console.log(err);
