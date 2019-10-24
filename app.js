@@ -34,7 +34,6 @@ app.get('/', function(req, res){
                 }else{
                     task.push(todo[i].item);
                 }
-                task.push(todo[i].item);
             }
         }
     });
@@ -69,7 +68,7 @@ app.post('/removetask', function(req, res){
         }
         res.redirect('/'); */
 
-    if (typeof removeTodo === "string"){
+    if (typeof removeTask === "string"){
         Todo.update({item: removedTask}, {done: true}, function(err){
             console.log(err);
         });
