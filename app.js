@@ -55,39 +55,39 @@ app.post('/addtask', function(req, res){
 });
 
 app.post('/removetask', function(req, res){
-    var removedTask = req.body.check;
-
-    /*
-    let removeTodo = new Todo({
-        item: req.body.check,
-        done: false
-    });
-    removeTodo.delete(function(err){
-        if (err){
-            console.log(err);
-        }
-        res.redirect('/'); */
-
-    if (typeof removedTask === "string"){
-        Todo.updateOne({item: removedTask}, {done: true}, function(err){
+    var completeTask = req.body.check;
+    if(typeof completeTask === "string"){
+        Todo.updateOne({item: completeTask},{done: true}, function(err){
             console.log(err);
         });
-      //  removeTodo.remove(item);
-        //task.splice(task.indexOf(removedTask), 1);
-    }
-    else if (typeof removedTask === "object"){
-        for (var i = 0; i < todo.length; i++){
-            Todo.update({item: removedTask[i]}, {done: true}, function(err){
+    }else if (typeof completeTask === "object"){
+        for(var i = 0; i < completeTask.length; i++){
+            Todo.updateOne({item: completeTask[i]},{done: true}, function(err){
             console.log(err);
         });
-           // removeTodo.save(removedTask[i]);
-            //task.splice(task.indexOf(removedTask[i]), 1);
         }
     }
     res.redirect('/');
 });
+   
+app.post("/deleteTodo", function(req, res){
+    var deleteTask = req.body.delete;
+    if(typeof deleteTask === "string"){
+        Todo.deleteOne({item: deleteTask}, function(err){
+            console.log(err);
+        });
+    }else if (typeof deleteTask === "object"){
+        for(var i = 0; i < deleteTask.length; i++){
+            Todo.deleteOne({item: deleteTask}, function(err){
+            console.log(err);
+        });
+        }
+    }
 
+    res.redirect('/');
+});
 
+    
 
 http.createServer(app).listen(port, function(){
 
