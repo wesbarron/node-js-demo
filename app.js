@@ -37,7 +37,8 @@ app.get('/', function(req, res){
             }
         }
     });
-    res.render("index", {task:task, complete:complete});
+   // res.render("index", {task:task, complete:complete});
+   res.json(task);
 });
 
 
@@ -50,7 +51,8 @@ app.post('/addtask', function(req, res){
         if (err){
             console.log(err);
         }
-        res.redirect('/');
+        //res.redirect('/');
+        res.json(task);
     });
 });
 
@@ -67,9 +69,10 @@ app.post('/removetask', function(req, res){
         });
         }
     }
-    res.redirect('/');
+    //res.redirect('/');
+    res.json(task);
 });
-   
+
 app.post("/deleteTodo", function(req, res){
     var deleteTask = req.body.delete;
     if(typeof deleteTask === "string"){
@@ -84,10 +87,11 @@ app.post("/deleteTodo", function(req, res){
         }
     }
 
-    res.redirect('/');
+    //res.redirect('/');
+    res.json(task);
 });
 
-    
+
 
 http.createServer(app).listen(port, function(){
 
